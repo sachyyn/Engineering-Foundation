@@ -1,0 +1,15 @@
+{
+  "tag": "v1.7.12",
+  "assets": [
+    {
+      "name": "actionlint_1.7.12_checksums.txt",
+      "url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_checksums.txt",
+      "digest": "sha256:433028cf0ba3c42163ea1a668dedce30fcdbe84fe912b1a5e288c006eab8a4f5"
+    },
+    {
+      "name": "actionlint_1.7.12_linux_amd64.tar.gz",
+      "url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz",
+      "digest": "sha256:8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8"
+    }
+  ]
+}

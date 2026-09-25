@@ -1,0 +1,58 @@
+[project]
+name = "ordersync"
+version = "0.3.1"
+requires-python = ">=3.12"
+dependencies = ["httpx>=0.27"]
+
+[project.scripts]
+ordersync = "ordersync.cli:main"
+
+[dependency-groups]
+build = [
+    "hatchling==1.32.4",
+]
+dev = [
+    "import-linter==2.15",
+    "mypy==2.3.1",
+    "pytest>=8",
+    "ruff==0.16.9",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py312"
+extend-exclude = [".foundation-trials"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "S102", "S307"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src/ordersync", "tests", "scripts"]
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+disallow_any_generics = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-config --strict-markers"
+
+[tool.importlinter]
+root_package = "ordersync"
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "ARCH-01 parser cannot depend on delivery or CLI"
+type = "forbidden"
+source_modules = ["ordersync.parse"]
+forbidden_modules = ["ordersync.push", "ordersync.cli", "httpx"]
+
+[[tool.importlinter.contracts]]
+name = "ARCH-02 delivery cannot depend on CLI"
+type = "forbidden"
+source_modules = ["ordersync.push"]
+forbidden_modules = ["ordersync.cli"]

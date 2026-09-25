@@ -1,0 +1,78 @@
+[
+  {
+    "name": "vue",
+    "path": ".claude/skills/vue/SKILL.md",
+    "source": "https://github.com/antfu/skills",
+    "revision": "e98e476e315f068f72d53bd3afb34fdd4d5851c3",
+    "license": "MIT",
+    "tasks": ["Vue components and reactivity"]
+  },
+  {
+    "name": "vue-testing-best-practices",
+    "path": ".claude/skills/vue-testing-best-practices/SKILL.md",
+    "source": "https://github.com/vuejs-ai/skills",
+    "revision": "c9d355ff23f654309dd02006be671859df0a134c",
+    "license": "MIT",
+    "tasks": ["Vue component and browser tests"]
+  },
+  {
+    "name": "symfony-voters",
+    "path": ".claude/skills/symfony-voters/SKILL.md",
+    "source": "https://github.com/dev-toolings/superpowers-symfony",
+    "revision": "ab84bcb7561060acd5b210d9ad5632289edcc0cc",
+    "license": "MIT",
+    "tasks": ["Symfony authorization"]
+  },
+  {
+    "name": "supabase-postgres-best-practices",
+    "path": ".claude/skills/supabase-postgres-best-practices/SKILL.md",
+    "source": "https://github.com/supabase/agent-skills",
+    "revision": "551274ed2fe97c8fea1325f7ceb05803a542f8df",
+    "license": "MIT",
+    "tasks": ["PostgreSQL queries, schema and locking"]
+  },
+  {
+    "name": "takewise-backend",
+    "path": ".claude/skills/takewise-backend/SKILL.md",
+    "source": "project-authored",
+    "revision": "project-authored",
+    "license": "Proprietary",
+    "tasks": ["Symfony endpoints, DTOs, application services and backend tests"]
+  },
+  {
+    "name": "takewise-frontend",
+    "path": ".claude/skills/takewise-frontend/SKILL.md",
+    "source": "project-authored",
+    "revision": "project-authored",
+    "license": "Proprietary",
+    "tasks": ["Vue screens, forms, server state and accessibility"]
+  },
+  {
+    "name": "takewise-security",
+    "path": ".claude/skills/takewise-security/SKILL.md",
+    "source": "project-authored",
+    "revision": "project-authored",
+    "license": "Proprietary",
+    "tasks": [
+      "Authentication, tenant authorization, invitation/reset, role or session changes"
+    ]
+  },
+  {
+    "name": "takewise-data",
+    "path": ".claude/skills/takewise-data/SKILL.md",
+    "source": "project-authored",
+    "revision": "project-authored",
+    "license": "Proprietary",
+    "tasks": [
+      "Schema, PostgreSQL queries, invoice lifecycle and inventory transactions"
+    ]
+  },
+  {
+    "name": "takewise-delivery",
+    "path": ".claude/skills/takewise-delivery/SKILL.md",
+    "source": "project-authored",
+    "revision": "project-authored",
+    "license": "Proprietary",
+    "tasks": ["CI, dependency updates, email queues, release and recovery"]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "name": "ledgerdesk/quality-tools",
+  "description": "Development checks only; no Symfony application scaffold",
+  "type": "project",
+  "require": {
+    "php": "~8.4.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "phpstan/phpstan-doctrine": "^2.0",
+    "phpstan/phpstan-symfony": "^2.0",
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "qossmic/deptrac": "^2.0",
+    "phpunit/phpunit": "^11.5"
+  },
+  "config": {
+    "allow-plugins": false,
+    "sort-packages": true
+  }
+}

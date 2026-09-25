@@ -1,0 +1,4 @@
+__pycache__/
+/repos/
+# Raw local trial transcripts: machine paths and session details. Summaries live in tests/RESULTS.md.
+/tests/evidence/

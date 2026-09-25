@@ -1,0 +1,217 @@
+{
+  "prettier": {
+    "version": "3.9.9",
+    "engines": {
+      "node": ">=14"
+    },
+    "license": "MIT"
+  },
+  "eslint": {
+    "version": "10.11.0",
+    "engines": {
+      "node": "^20.19.0 || ^22.13.0 || >=24"
+    },
+    "peerDependencies": {
+      "jiti": "*"
+    },
+    "license": "MIT"
+  },
+  "@eslint/js": {
+    "version": "10.0.1",
+    "engines": {
+      "node": "^20.19.0 || ^22.13.0 || >=24"
+    },
+    "peerDependencies": {
+      "eslint": "^10.0.0"
+    },
+    "license": "MIT"
+  },
+  "typescript": {
+    "version": "7.0.2",
+    "engines": {
+      "node": ">=16.20.0"
+    },
+    "license": "Apache-2.0"
+  },
+  "typescript-eslint": {
+    "version": "8.70.1",
+    "engines": {
+      "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+    },
+    "peerDependencies": {
+      "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+      "typescript": ">=4.8.4 <6.1.0"
+    },
+    "license": "MIT"
+  },
+  "eslint-plugin-vue": {
+    "version": "10.11.1",
+    "engines": {
+      "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+    },
+    "peerDependencies": {
+      "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+      "vue-eslint-parser": "^10.3.0",
+      "@stylistic/eslint-plugin": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0",
+      "@typescript-eslint/parser": "^7.0.0 || ^8.0.0"
+    },
+    "license": "MIT"
+  },
+  "vue-eslint-parser": {
+    "version": "10.4.1",
+    "engines": {
+      "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+    },
+    "peerDependencies": {
+      "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0"
+    },
+    "license": "MIT"
+  },
+  "vue-tsc": {
+    "version": "3.3.11",
+    "peerDependencies": {
+      "typescript": ">=5.0.0"
+    },
+    "license": "MIT"
+  },
+  "vue": {
+    "version": "3.5.43",
+    "peerDependencies": {
+      "typescript": "*"
+    },
+    "license": "MIT"
+  },
+  "vue-router": {
+    "version": "5.3.1",
+    "peerDependencies": {
+      "vue": "^3.5.34 || ^4.0.0",
+      "vite": "^7.3.0 || ^8.0.0",
+      "pinia": "^3.0.4 || ^4.0.2",
+      "@pinia/colada": ">=0.21.2",
+      "@vue/compiler-sfc": "^3.5.34 || ^4.0.0"
+    },
+    "license": "MIT"
+  },
+  "vite": {
+    "version": "8.3.1",
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    },
+    "peerDependencies": {
+      "tsx": "^4.8.1",
+      "jiti": ">=1.21.0",
+      "less": "^4.0.0",
+      "sass": "^1.70.0",
+      "yaml": "^2.4.2",
+      "stylus": ">=0.54.8",
+      "terser": "^5.16.0",
+      "esbuild": "^0.27.0 || ^0.28.0",
+      "sugarss": "^5.0.0",
+      "@types/node": "^20.19.0 || >=22.12.0",
+      "sass-embedded": "^1.70.0",
+      "@vitejs/devtools": "^0.7.1"
+    },
+    "license": "MIT"
+  },
+  "@vitejs/plugin-vue": {
+    "version": "6.0.9",
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    },
+    "peerDependencies": {
+      "vue": "^3.2.25",
+      "vite": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    "license": "MIT"
+  },
+  "vitest": {
+    "version": "5.0.1",
+    "engines": {
+      "node": "^22.12.0 || ^24.0.0 || >=26.0.0"
+    },
+    "peerDependencies": {
+      "vite": "^6.4.0 || ^7.0.0 || ^8.0.0",
+      "jsdom": "*",
+      "happy-dom": "*",
+      "@vitest/ui": "5.0.1",
+      "@types/node": "^22.0.0 || >=24.0.0",
+      "@edge-runtime/vm": "*",
+      "@opentelemetry/api": "^1.9.0",
+      "@vitest/coverage-v8": "5.0.1",
+      "@vitest/browser-preview": "5.0.1",
+      "@vitest/coverage-istanbul": "5.0.1",
+      "@vitest/browser-playwright": "5.0.1",
+      "@vitest/browser-webdriverio": "^5.0.0-beta.5 || >=5.0.0"
+    },
+    "license": "MIT"
+  },
+  "@vue/test-utils": {
+    "version": "2.5.1",
+    "peerDependencies": {
+      "vue": "3.x",
+      "@vue/compiler-dom": "3.x",
+      "@vue/server-renderer": "3.x"
+    },
+    "license": "MIT"
+  },
+  "jsdom": {
+    "version": "30.1.1",
+    "engines": {
+      "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+    },
+    "peerDependencies": {
+      "canvas": "^3.2.3"
+    },
+    "license": "MIT"
+  },
+  "@playwright/test": {
+    "version": "1.63.0",
+    "engines": {
+      "node": ">=20"
+    },
+    "license": "Apache-2.0"
+  },
+  "@axe-core/playwright": {
+    "version": "4.13.0",
+    "peerDependencies": {
+      "playwright-core": ">= 1.0.0"
+    },
+    "license": "MPL-2.0"
+  },
+  "@redocly/cli": {
+    "version": "2.54.2",
+    "engines": {
+      "npm": ">=10",
+      "node": ">=22.12.0 || >=20.19.0 <21.0.0"
+    },
+    "license": "MIT"
+  },
+  "openapi-typescript": {
+    "version": "7.13.0",
+    "peerDependencies": {
+      "typescript": "^5.x"
+    },
+    "license": "MIT"
+  },
+  "yaml": {
+    "version": "2.9.1",
+    "engines": {
+      "node": ">= 14.6"
+    },
+    "license": "ISC"
+  },
+  "secretlint": {
+    "version": "13.0.5",
+    "engines": {
+      "node": ">=22.0.0"
+    },
+    "license": "MIT"
+  },
+  "@secretlint/secretlint-rule-preset-recommend": {
+    "version": "13.0.5",
+    "engines": {
+      "node": ">=22.0.0"
+    },
+    "license": "MIT"
+  }
+}

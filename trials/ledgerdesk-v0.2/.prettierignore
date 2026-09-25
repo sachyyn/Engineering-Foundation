@@ -1,0 +1,14 @@
+node_modules/
+vendor/
+.git/
+.agents/
+.codex/
+.cache/
+.verification/
+tooling/bin/
+package-lock.json
+frontend/src/api/schema.d.ts
+frontend/dist/
+backend/var/
+playwright-report/
+test-results/

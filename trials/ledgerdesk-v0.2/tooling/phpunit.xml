@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="../backend/tests/bootstrap.php" colors="true"
+         failOnEmptyTestSuite="true" failOnRisky="true" failOnWarning="true"
+         cacheDirectory="../.cache/phpunit">
+  <testsuites>
+    <testsuite name="unit"><directory>../backend/tests/Unit</directory></testsuite>
+    <testsuite name="integration"><directory>../backend/tests/Integration</directory></testsuite>
+    <testsuite name="functional"><directory>../backend/tests/Functional</directory></testsuite>
+  </testsuites>
+  <php><env name="APP_ENV" value="test" force="true"/></php>
+</phpunit>

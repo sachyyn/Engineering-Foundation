@@ -1,0 +1,134 @@
+[
+  {
+    "trial": "clean-copy shared gate",
+    "command": [
+      "bash",
+      "scripts/check.sh"
+    ],
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "All checks passed!\nSuccess: no issues found in 8 source files\n\n\u2554\u2550\u2550\u2557\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25b6\u2554\u2557 \u2554\u2557      \u2554\u2557\u25c0\u2500\u2500\u2500\u2510\n\u255a\u2563\u2560\u255d\u25c0\u2500\u2500\u2500\u2500\u2500\u2510  \u2554\u255d\u255a\u2557\u2551\u2551\u2500\u2500\u2500\u2500\u25b6\u2554\u255d\u255a\u2557   \u2502\n \u2551\u2551   \u2554\u2550\u2550\u2566\u2550\u2550\u2566\u2569\u2557\u2554\u255d\u2551\u2551  \u2554\u2566\u2550\u2569\u2557\u2554\u255d\u2554\u2550\u2566\u2550\u2550\u2557\n \u2551\u2551\u2554\u2550\u2550\u2563\u2554\u2557\u2551\u2554\u2557\u2551\u2554\u2563\u2551 \u2551\u2551 \u2554\u256c\u2563\u2554\u2557\u2551\u2551 \u2551\u2502\u2551\u2554\u2550\u255d\n\u2554\u2563\u2560\u2563\u2551\u2551\u2551\u255a\u255d\u2551\u255a\u255d\u2551\u2551\u2551\u255a\u2557\u2551\u255a\u2550\u255d\u2551\u2551\u2551\u2551\u2551\u255a\u2557\u2551\u2550\u2563\u2551\n\u255a\u2550\u2550\u2569\u2569\u2569\u2563\u2554\u2550\u2569\u2550\u2550\u2569\u255d\u255a\u2550\u255d\u255a\u2550\u2550\u2550\u2569\u2569\u255d\u255a\u2569\u2550\u2569\u2569\u2550\u2569\u255d\n  \u2514\u2500\u2500\u25b6\u2551\u2551                    \u25b2 \n      \u255a\u255d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\n---------\nContracts\n---------\n\nAnalyzed 11 files, 11 dependencies.\n-----------------------------------\n\nARCH-01 parser cannot depend on delivery or CLI KEPT\nARCH-02 delivery cannot depend on CLI KEPT\n\nContracts: 2 kept, 0 broken.\n============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: <trial>\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: anyio-4.15.1\ncollected 1 item\n\ntests/test_parse.py .                                                    [100%]\n\n============================== 1 passed in 0.02s ===============================\nSTRUCTURE PASS; recorded outcome: ready.\nContent claims and review status are not independently certified by this check.\nNot verified: Git ignore rules; target is not a usable Git worktree.\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nUsing CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\nResolved 29 packages in 0.78ms\n   Building ordersync @ file://<trial>\nDownloading mypy (14.6MiB)\nDownloading pygments (1.2MiB)\nDownloading ruff (9.9MiB)\nDownloading grimp (2.2MiB)\nDownloading ast-serialize (1.3MiB)\n      Built ordersync @ file://<trial>\n Downloaded pygments\n Downloaded ast-serialize\n Downloaded grimp\n Downloaded ruff\n Downloaded mypy\nPrepared 28 packages in 31.54s\nInstalled 28 packages in 46ms\n + anyio==4.15.1\n + ast-serialize==0.11.2\n + certifi==2026.7.22\n + click==8.5.0\n + grimp==3.17\n + h11==0.16.0\n + hatchling==1.32.4\n + httpcore==1.0.9\n + httpx==0.28.1\n + idna==3.20\n + import-linter==2.15\n + iniconfig==2.3.0\n + librt==0.15.0\n + markdown-it-py==4.2.0\n + mdurl==0.1.2\n + mypy==2.3.1\n + mypy-extensions==1.1.0\n + ordersync==0.3.1 (from file://<trial>)\n + packaging==26.3\n + pathspec==1.1.1\n + pluggy==1.6.0\n + pygments==2.21.0\n + pytest==9.1.1\n + rich==15.0.0\n + ruff==0.16.9\n + tomlkit==0.15.1\n + trove-classifiers==2026.9.21.13\n + typing-extensions==4.16.0\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: The cache directory `.cache/uv` is inside the build source directory `.` and may be included in distributions\nBuilding wheel...\nSuccessfully built dist/ordersync-0.3.1-py3-none-any.whl\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  },
+  {
+    "trial": "existing-file money violation",
+    "command": [
+      "uv",
+      "run",
+      "python",
+      "scripts/check_money.py"
+    ],
+    "exit": 1,
+    "expected_exit": 1,
+    "output": "MONEY-01 src/ordersync/parse.py:22: use Decimal from text; see docs/engineering/rules.md\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  },
+  {
+    "trial": "new-file money violation",
+    "command": [
+      "uv",
+      "run",
+      "python",
+      "scripts/check_money.py"
+    ],
+    "exit": 1,
+    "expected_exit": 1,
+    "output": "MONEY-01 src/ordersync/money/probe.py:1: use Decimal from text; see docs/engineering/rules.md\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  },
+  {
+    "trial": "forbidden import",
+    "command": [
+      "uv",
+      "run",
+      "lint-imports",
+      "--no-cache"
+    ],
+    "exit": 1,
+    "expected_exit": 1,
+    "output": "\n\u2554\u2550\u2550\u2557\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25b6\u2554\u2557 \u2554\u2557      \u2554\u2557\u25c0\u2500\u2500\u2500\u2510\n\u255a\u2563\u2560\u255d\u25c0\u2500\u2500\u2500\u2500\u2500\u2510  \u2554\u255d\u255a\u2557\u2551\u2551\u2500\u2500\u2500\u2500\u25b6\u2554\u255d\u255a\u2557   \u2502\n \u2551\u2551   \u2554\u2550\u2550\u2566\u2550\u2550\u2566\u2569\u2557\u2554\u255d\u2551\u2551  \u2554\u2566\u2550\u2569\u2557\u2554\u255d\u2554\u2550\u2566\u2550\u2550\u2557\n \u2551\u2551\u2554\u2550\u2550\u2563\u2554\u2557\u2551\u2554\u2557\u2551\u2554\u2563\u2551 \u2551\u2551 \u2554\u256c\u2563\u2554\u2557\u2551\u2551 \u2551\u2502\u2551\u2554\u2550\u255d\n\u2554\u2563\u2560\u2563\u2551\u2551\u2551\u255a\u255d\u2551\u255a\u255d\u2551\u2551\u2551\u255a\u2557\u2551\u255a\u2550\u255d\u2551\u2551\u2551\u2551\u2551\u255a\u2557\u2551\u2550\u2563\u2551\n\u255a\u2550\u2550\u2569\u2569\u2569\u2563\u2554\u2550\u2569\u2550\u2550\u2569\u255d\u255a\u2550\u255d\u255a\u2550\u2550\u2550\u2569\u2569\u255d\u255a\u2569\u2550\u2569\u2569\u2550\u2569\u255d\n  \u2514\u2500\u2500\u25b6\u2551\u2551                    \u25b2 \n      \u255a\u255d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\n---------\nContracts\n---------\n\nAnalyzed 11 files, 12 dependencies.\n-----------------------------------\n\nARCH-01 parser cannot depend on delivery or CLI BROKEN\nARCH-02 delivery cannot depend on CLI BROKEN\n\nContracts: 0 kept, 2 broken.\n\n\n----------------\nBroken contracts\n----------------\n\nARCH-01 parser cannot depend on delivery or CLI\n-----------------------------------------------\n\nordersync.parse is not allowed to import httpx:\n\n-   ordersync.parse -> ordersync.cli (l.22)\n    ordersync.cli -> ordersync.push (l.5)\n    ordersync.push -> httpx (l.4)\n\n\nordersync.parse is not allowed to import ordersync.cli:\n\n-   ordersync.parse -> ordersync.cli (l.22)\n\n\nordersync.parse is not allowed to import ordersync.push:\n\n-   ordersync.parse -> ordersync.cli (l.22)\n    ordersync.cli -> ordersync.push (l.5)\n\n\nARCH-02 delivery cannot depend on CLI\n-------------------------------------\n\nordersync.push is not allowed to import ordersync.cli:\n\n-   ordersync.push -> ordersync.parse (l.6)\n    ordersync.parse -> ordersync.cli (l.22)\n\n\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  },
+  {
+    "trial": "new-file type violation",
+    "command": [
+      "uv",
+      "run",
+      "mypy"
+    ],
+    "exit": 1,
+    "expected_exit": 1,
+    "output": "src/ordersync/type_probe.py:1: error: Incompatible types in assignment (expression has type \"str\", variable has type \"int\")  [assignment]\nFound 1 error in 1 file (checked 9 source files)\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  },
+  {
+    "trial": "new-file unsafe eval",
+    "command": [
+      "uv",
+      "run",
+      "ruff",
+      "check",
+      "src",
+      "tests",
+      "scripts"
+    ],
+    "exit": 1,
+    "expected_exit": 1,
+    "output": "S307 Use of possibly insecure function; consider using `ast.literal_eval`\n --> src/ordersync/security_probe.py:1:1\n  |\n1 | eval(\"1 + 1\")\n  | ^^^^^^^^^^^^^\n\nFound 1 error.\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  },
+  {
+    "trial": "failing test",
+    "command": [
+      "uv",
+      "run",
+      "pytest",
+      "-q"
+    ],
+    "exit": 1,
+    "expected_exit": 1,
+    "output": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n_______________________________ test_gate_probe ________________________________\n\n    def test_gate_probe():\n>       assert False\nE       assert False\n\ntests/test_gate_probe.py:2: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_gate_probe.py::test_gate_probe - assert False\n1 failed, 1 passed in 0.03s\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  },
+  {
+    "trial": "zero tests",
+    "command": [
+      "uv",
+      "run",
+      "pytest",
+      "-q",
+      "tests"
+    ],
+    "exit": 5,
+    "expected_exit": 5,
+    "output": "\nno tests ran in 0.01s\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  },
+  {
+    "trial": "stale lock",
+    "command": [
+      "uv",
+      "sync",
+      "--locked",
+      "--all-groups"
+    ],
+    "exit": 1,
+    "expected_exit": 1,
+    "output": "warning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nResolved 29 packages in 1.74s\nerror: The lockfile at `uv.lock` needs to be updated, but `--locked` was provided.\n\nhint: To update the lockfile, run `uv lock`.\n"
+  },
+  {
+    "trial": "missing skill",
+    "command": [
+      "uv",
+      "run",
+      "python",
+      "scripts/check_foundation.py",
+      "."
+    ],
+    "exit": 1,
+    "expected_exit": 1,
+    "output": "warning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n   Building ordersync @ file://<trial>\n      Built ordersync @ file://<trial>\nUninstalled 1 package in 0.37ms\nInstalled 1 package in 0.77ms\nSTRUCTURE FAIL: broken local reference in <trial>/docs/engineering/skills.md: ../../.claude/skills/ordersync-data/SKILL.md\n"
+  },
+  {
+    "trial": "restored shared gate",
+    "command": [
+      "bash",
+      "scripts/check.sh"
+    ],
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "All checks passed!\nSuccess: no issues found in 8 source files\n\n\u2554\u2550\u2550\u2557\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25b6\u2554\u2557 \u2554\u2557      \u2554\u2557\u25c0\u2500\u2500\u2500\u2510\n\u255a\u2563\u2560\u255d\u25c0\u2500\u2500\u2500\u2500\u2500\u2510  \u2554\u255d\u255a\u2557\u2551\u2551\u2500\u2500\u2500\u2500\u25b6\u2554\u255d\u255a\u2557   \u2502\n \u2551\u2551   \u2554\u2550\u2550\u2566\u2550\u2550\u2566\u2569\u2557\u2554\u255d\u2551\u2551  \u2554\u2566\u2550\u2569\u2557\u2554\u255d\u2554\u2550\u2566\u2550\u2550\u2557\n \u2551\u2551\u2554\u2550\u2550\u2563\u2554\u2557\u2551\u2554\u2557\u2551\u2554\u2563\u2551 \u2551\u2551 \u2554\u256c\u2563\u2554\u2557\u2551\u2551 \u2551\u2502\u2551\u2554\u2550\u255d\n\u2554\u2563\u2560\u2563\u2551\u2551\u2551\u255a\u255d\u2551\u255a\u255d\u2551\u2551\u2551\u255a\u2557\u2551\u255a\u2550\u255d\u2551\u2551\u2551\u2551\u2551\u255a\u2557\u2551\u2550\u2563\u2551\n\u255a\u2550\u2550\u2569\u2569\u2569\u2563\u2554\u2550\u2569\u2550\u2550\u2569\u255d\u255a\u2550\u255d\u255a\u2550\u2550\u2550\u2569\u2569\u255d\u255a\u2569\u2550\u2569\u2569\u2550\u2569\u255d\n  \u2514\u2500\u2500\u25b6\u2551\u2551                    \u25b2 \n      \u255a\u255d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\n---------\nContracts\n---------\n\nAnalyzed 11 files, 11 dependencies.\n-----------------------------------\n\nARCH-01 parser cannot depend on delivery or CLI KEPT\nARCH-02 delivery cannot depend on CLI KEPT\n\nContracts: 2 kept, 0 broken.\n============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: <trial>\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: anyio-4.15.1\ncollected 1 item\n\ntests/test_parse.py .                                                    [100%]\n\n============================== 1 passed in 0.01s ===============================\nSTRUCTURE PASS; recorded outcome: ready.\nContent claims and review status are not independently certified by this check.\nNot verified: Git ignore rules; target is not a usable Git worktree.\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nResolved 29 packages in 1ms\nChecked 28 packages in 0.75ms\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nwarning: The cache directory `.cache/uv` is inside the build source directory `.` and may be included in distributions\nBuilding wheel...\nSuccessfully built dist/ordersync-0.3.1-py3-none-any.whl\nwarning: `VIRTUAL_ENV=<repository>/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+  }
+]

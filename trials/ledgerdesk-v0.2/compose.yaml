@@ -1,0 +1,32 @@
+name: ledgerdesk-local
+services:
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: ledgerdesk_local
+      POSTGRES_USER: ledgerdesk_local_admin
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports: ['127.0.0.1:5432:5432']
+    volumes: ['pgdata:/var/lib/postgresql']
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'pg_isready -U ledgerdesk_local_admin -d ledgerdesk_local',
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+  mailpit:
+    image: axllent/mailpit:v1.27
+    ports: ['127.0.0.1:1025:1025', '127.0.0.1:8025:8025']
+  php-tools:
+    profiles: ['tools']
+    build:
+      context: .
+      dockerfile: tooling/php/Dockerfile
+    working_dir: /workspace
+    volumes: ['.:/workspace']
+    entrypoint: ['php']
+volumes:
+  pgdata:

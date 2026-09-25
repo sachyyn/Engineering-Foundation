@@ -1,0 +1,60 @@
+name: Takewise checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  merge_group:
+permissions:
+  contents: read
+jobs:
+  quality:
+    name: Takewise / quality
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:18.3
+        env:
+          POSTGRES_DB: takewise_test
+          POSTGRES_USER: takewise_test_owner
+          POSTGRES_PASSWORD: ci-local-only
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U takewise_test_owner -d takewise_test"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      APP_ENV: test
+      # This credential is only for the disposable CI PostgreSQL service above.
+      # secretlint-disable-next-line @secretlint/secretlint-rule-database-connection-string
+      DATABASE_URL: postgresql://takewise_test_owner:ci-local-only@127.0.0.1:5432/takewise_test?serverVersion=18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .node-version
+      - name: Install pinned pnpm
+        run: npm install --global pnpm@10.32.1 --ignore-scripts
+      - name: Install foundation tools
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Install local workflow linter
+        run: pnpm setup:tools
+      - name: Detect application inputs
+        id: app
+        run: node tooling/detect-ci.mjs
+      - uses: shivammathur/setup-php@b604ade2a87db23f8871b7182e69ec5e75effb45 # v2
+        if: steps.app.outputs.backend == 'true'
+        with:
+          php-version: "8.5"
+          extensions: pdo_pgsql, sodium, intl, mbstring
+          tools: composer:v2
+          coverage: none
+      - name: Install browser dependencies when frontend exists
+        if: steps.app.outputs.frontend == 'true'
+        run: |
+          pnpm --dir frontend install --frozen-lockfile --ignore-scripts
+          pnpm --dir frontend exec playwright install --with-deps chromium
+      - name: Quality gate
+        run: pnpm check

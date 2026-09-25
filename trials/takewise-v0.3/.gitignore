@@ -1,0 +1,15 @@
+node_modules/
+vendor/
+.tools/
+.env
+.env.local
+.env.*.local
+!.env.example
+frontend/dist/
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+backend/var/
+.tooling-output/
+*.log
+.DS_Store

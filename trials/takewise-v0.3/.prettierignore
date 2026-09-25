@@ -1,0 +1,9 @@
+.claude/skills/vue/
+.claude/skills/vue-testing-best-practices/
+.claude/skills/symfony-voters/
+.claude/skills/supabase-postgres-best-practices/
+pnpm-lock.yaml
+.tools/
+.tooling-output/
+frontend/src/api/schema.d.ts
+backend/openapi.json

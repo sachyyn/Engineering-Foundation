@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "status": "partial",
+  "artifacts": {
+    "entry": "AGENTS.md",
+    "research": "docs/engineering/research.md",
+    "skill_evaluation": "docs/engineering/skills.md",
+    "rules": "docs/engineering/rules.md",
+    "patterns": "docs/engineering/patterns.md",
+    "enforcement": "docs/engineering/enforcement.md",
+    "verification": "docs/engineering/verification.md"
+  },
+  "areas": {
+    "product-risk": {
+      "status": "deferred",
+      "detail": "Scope and permissions approved in research.md; legal issuance/cancellation and retention are launch gates in operations.md, not invented guarantees."
+    },
+    "runtime-deployment": {
+      "status": "resolved",
+      "detail": "Vue 3, Symfony 7.4/PHP 8.4, PostgreSQL 18, Node 22; same-origin SPA/backend. Provider selection deferred separately."
+    },
+    "responsibilities": {
+      "status": "resolved",
+      "detail": "ARCH-01 defines layer dependencies; P1-P4 and P7 give dataflow, authorization, transaction boundaries and failures."
+    },
+    "repository-structure": {
+      "status": "resolved",
+      "detail": "rules.md and patterns.md prescribe future frontend/backend/contracts paths without application scaffolding."
+    },
+    "language-conventions": {
+      "status": "resolved",
+      "detail": "LANG-01 and tooling configurations select strict PHP/TypeScript, formatting and meaningful analysis; PHP execution unavailable."
+    },
+    "api-contracts": {
+      "status": "resolved",
+      "detail": "API-01-03: OpenAPI 3.1 authority, validated DTOs, generated types, problem responses, pagination and idempotency; product checks await actual operations."
+    },
+    "data-persistence": {
+      "status": "resolved",
+      "detail": "DATA-01-03 and P2/P3 define tenant isolation, NUMERIC(18,2)/64-bit checked money and quantity bounds, provisioned tenant counter locks/exhaustion, atomic issuance and migration review."
+    },
+    "identity-security": {
+      "status": "resolved",
+      "detail": "SEC-01-03 and P4/P7 define login/reset and account management, tenant authority guards, usable-owner preservation, optimistic versions and per-request session-version revocation."
+    },
+    "frontend-interaction": {
+      "status": "resolved",
+      "detail": "UI-01-02 and P1 define Vue composition, typed transport, errors, forms and keyboard/axe/manual accessibility."
+    },
+    "background-concurrency": {
+      "status": "resolved",
+      "detail": "JOB-01: PostgreSQL Messenger mail queue, at-least-once/retry/context cleanup; DATA-02 handles invoice/version concurrency."
+    },
+    "local-development": {
+      "status": "blocked",
+      "detail": "Node22 local and clean-copy checks verified. PHP/Composer/Docker absent; PHP lock resolution and PHP/container runtime checks unavailable. See verification.md."
+    },
+    "verification-strategy": {
+      "status": "resolved",
+      "detail": "TEST-01, patterns.md, check-product preflight and configured suite runners distinguish foundation tests from missing product tests."
+    },
+    "performance-reliability": {
+      "status": "resolved",
+      "detail": "API-03 bounded pages; JOB-01 bounded retries/timeouts; operations.md requires measured release budgets, alerts and restoration. No speculative SLA."
+    },
+    "ci-review": {
+      "status": "resolved",
+      "detail": "quality.yml and enforcement.md specify PR/main triggers, read-only pins, stable quality gate and administrator activation. Hosted behavior unverified."
+    },
+    "build-supply-chain": {
+      "status": "blocked",
+      "detail": "npm lock, compatible peer resolution, zero-advisory scan and pinned actionlint verified. PHP tool lock cannot resolve without PHP/Composer; local image tags are not production digests."
+    },
+    "release-distribution": {
+      "status": "resolved",
+      "detail": "operations.md defines immutable tested artifact identity, promotion, migration order, worker restart and rollback limits; no active deployment."
+    },
+    "cd-infrastructure": {
+      "status": "deferred",
+      "detail": "Production provider/identity/activation unchosen. No deployment workflow; operations.md specifies target-independent release contract."
+    },
+    "operations-recovery": {
+      "status": "deferred",
+      "detail": "Runbooks/log redaction/mail failure/restore criteria written; production host, retention, RPO/RTO and owner are launch prerequisites."
+    },
+    "agent-guidance": {
+      "status": "resolved",
+      "detail": "AGENTS.md routes five local skills and rules/patterns; direct-file fallback replaces unavailable native discovery in this trial."
+    },
+    "maintenance-handoff": {
+      "status": "resolved",
+      "detail": "operations.md/enforcement.md define ownership handoff, dependency review and explicit reassessment triggers; no caretaker installed."
+    }
+  },
+  "skills": [
+    {
+      "name": "ledgerdesk-backend",
+      "path": "docs/engineering/skills/ledgerdesk-backend/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Project licensing undecided; no public license grant asserted",
+      "tasks": ["Symfony operations", "API DTO/contracts/errors"]
+    },
+    {
+      "name": "ledgerdesk-delivery",
+      "path": "docs/engineering/skills/ledgerdesk-delivery/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Project licensing undecided; no public license grant asserted",
+      "tasks": [
+        "Local tooling and CI",
+        "Dependency/release/recovery/policy changes"
+      ]
+    },
+    {
+      "name": "ledgerdesk-frontend",
+      "path": "docs/engineering/skills/ledgerdesk-frontend/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Project licensing undecided; no public license grant asserted",
+      "tasks": ["Vue forms and API consumers", "Keyboard accessibility"]
+    },
+    {
+      "name": "ledgerdesk-security-data",
+      "path": "docs/engineering/skills/ledgerdesk-security-data/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Project licensing undecided; no public license grant asserted",
+      "tasks": [
+        "Authentication and reset",
+        "Tenant isolation and migrations",
+        "Invoice/role integrity"
+      ]
+    },
+    {
+      "name": "ledgerdesk-testing",
+      "path": "docs/engineering/skills/ledgerdesk-testing/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Project licensing undecided; no public license grant asserted",
+      "tasks": [
+        "Unit/integration/contract/browser tests",
+        "Denial and concurrency proofs"
+      ]
+    }
+  ],
+  "blockers": [
+    "PHP 8.4/Composer unavailable: PHP tooling dependencies have not been resolved/locked, and PHP-CS-Fixer/PHPStan/Deptrac/PHPUnit configuration execution is not verified.",
+    "Docker unavailable: Compose service definitions and PHP tooling image build/connectivity are not verified."
+  ],
+  "exceptions": [],
+  "substantive_review": {
+    "status": "pass",
+    "mode": "independent",
+    "reviewer": "Independent agent /root/correction_review: scoped corrective content re-review, 2026-09-25; earlier external findings superseded by corrected artifacts",
+    "evidence": "docs/engineering/verification.md"
+  }
+}

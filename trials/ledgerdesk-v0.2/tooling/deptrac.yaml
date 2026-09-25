@@ -1,0 +1,46 @@
+deptrac:
+  paths:
+    - ../backend/src
+  layers:
+    - name: Controller
+      collectors: [{ type: classLike, value: '^App\\Controller\\.*' }]
+    - name: Dto
+      collectors: [{ type: classLike, value: '^App\\Dto\\.*' }]
+    - name: Service
+      collectors: [{ type: classLike, value: '^App\\Service\\.*' }]
+    - name: Repository
+      collectors: [{ type: classLike, value: '^App\\Repository\\.*' }]
+    - name: Entity
+      collectors: [{ type: classLike, value: '^App\\Entity\\.*' }]
+    - name: Value
+      collectors: [{ type: classLike, value: '^App\\Value\\.*' }]
+    - name: Security
+      collectors: [{ type: classLike, value: '^App\\Security\\.*' }]
+    - name: Message
+      collectors: [{ type: classLike, value: '^App\\Message\\.*' }]
+    - name: MessageHandler
+      collectors: [{ type: classLike, value: '^App\\MessageHandler\\.*' }]
+    - name: EventSubscriber
+      collectors: [{ type: classLike, value: '^App\\EventSubscriber\\.*' }]
+    - name: DoctrineManager
+      collectors:
+        [
+          {
+            type: classLike,
+            value: '^Doctrine\\(ORM\\EntityManager.*|Persistence\\.*|DBAL\\.*)',
+          },
+        ]
+    - name: Http
+      collectors: [{ type: classLike, value: '^Symfony\\Component\\Http.*' }]
+  ruleset:
+    Controller: [Dto, Service, Security, Value, Http]
+    Dto: [Value]
+    Service:
+      [Repository, Entity, Value, Dto, Security, Message, DoctrineManager]
+    Repository: [Entity, Value, DoctrineManager]
+    Entity: [Value]
+    Value: []
+    Security: [Entity, Value, Repository]
+    Message: [Value]
+    MessageHandler: [Message, Service, Security, Value]
+    EventSubscriber: [Security, Value, Http]

@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "status": "ready",
+  "artifacts": {
+    "entry": "AGENTS.md",
+    "research": "docs/engineering/research.md",
+    "skill_evaluation": "docs/engineering/skills.md",
+    "rules": "docs/engineering/rules.md",
+    "patterns": "docs/engineering/patterns.md",
+    "enforcement": "docs/engineering/enforcement.md",
+    "verification": "docs/engineering/verification.md"
+  },
+  "areas": {
+    "product-risk": {
+      "status": "resolved",
+      "detail": "Confirmed shared ERP scope, stock/money/tenant invariants and open production obligations in research.md."
+    },
+    "runtime-deployment": {
+      "status": "deferred",
+      "detail": "Provider-neutral development/release/recovery conventions are specified in delivery.md; hosting, provider identities, production targets and restore drill require later activation decisions. Does not block compliant feature development."
+    },
+    "responsibilities": {
+      "status": "resolved",
+      "detail": "ARCH-1/2 separate HTTP, Application, Domain, Infrastructure and frontend API/features; recipes define flow."
+    },
+    "repository-structure": {
+      "status": "resolved",
+      "detail": "frontend/backend future paths, root tooling/docs and canonical .claude/skills; no speculative app scaffold."
+    },
+    "language-conventions": {
+      "status": "resolved",
+      "detail": "LANG-1 strict PHP/TypeScript, Vue Composition API, formatter and analyzer templates."
+    },
+    "api-contracts": {
+      "status": "resolved",
+      "detail": "API-1..3 define DTO authority, OpenAPI generation/freshness, RFC9457 and conformance tests."
+    },
+    "data-persistence": {
+      "status": "resolved",
+      "detail": "DATA-1..5 and transaction recipes define RLS, schema constraints, exact arithmetic, concurrency and migration rules."
+    },
+    "identity-security": {
+      "status": "resolved",
+      "detail": "SEC-1..4 and recipes specify login CSRF, sessions, tokens, revocation, last-admin and tenant permissions."
+    },
+    "frontend-interaction": {
+      "status": "resolved",
+      "detail": "UI-1/2 specify query/form state, errors, retries/cache clearance and accessibility review."
+    },
+    "background-concurrency": {
+      "status": "resolved",
+      "detail": "JOB-1 and recipes define atomic encrypted queue, expiry/retries, company locks and fresh-manager retries."
+    },
+    "local-development": {
+      "status": "resolved",
+      "detail": "Node/pnpm frozen root tooling and Compose services; PHP8.5 applications activated later using tooling README."
+    },
+    "verification-strategy": {
+      "status": "resolved",
+      "detail": "QA-1 plus executable foundation and auto-activated product gates; verification.md discloses exact results."
+    },
+    "performance-reliability": {
+      "status": "resolved",
+      "detail": "Bounded pagination, explicit contention model, query-plan review and production SLO/load-test prerequisites."
+    },
+    "ci-review": {
+      "status": "resolved",
+      "detail": "Readonly pinned Actions quality job; review/required-check remote activation handoff in delivery.md."
+    },
+    "build-supply-chain": {
+      "status": "resolved",
+      "detail": "Lockfiles, audits, license inventory, reviewed pins, disabled unreviewed install scripts and proprietary notices."
+    },
+    "release-distribution": {
+      "status": "resolved",
+      "detail": "Provider-neutral immutable artifact, migration and rollback sequence in delivery.md; no active deployment."
+    },
+    "cd-infrastructure": {
+      "status": "deferred",
+      "detail": "Provider-neutral development/release/recovery conventions are specified in delivery.md; hosting, provider identities, production targets and restore drill require later activation decisions. Does not block compliant feature development."
+    },
+    "operations-recovery": {
+      "status": "deferred",
+      "detail": "Provider-neutral development/release/recovery conventions are specified in delivery.md; hosting, provider identities, production targets and restore drill require later activation decisions. Does not block compliant feature development."
+    },
+    "agent-guidance": {
+      "status": "resolved",
+      "detail": "AGENTS/CLAUDE single entry and nine locally routed skills; independent direct-file discovery trial passed."
+    },
+    "maintenance-handoff": {
+      "status": "resolved",
+      "detail": "Tech lead review, no scheduled caretaker, explicit reassessment and documented activation ownership."
+    }
+  },
+  "skills": [
+    {
+      "name": "vue",
+      "path": ".claude/skills/vue/SKILL.md",
+      "source": "https://github.com/antfu/skills",
+      "revision": "e98e476e315f068f72d53bd3afb34fdd4d5851c3",
+      "license": "MIT",
+      "tasks": ["Vue components and reactivity"]
+    },
+    {
+      "name": "vue-testing-best-practices",
+      "path": ".claude/skills/vue-testing-best-practices/SKILL.md",
+      "source": "https://github.com/vuejs-ai/skills",
+      "revision": "c9d355ff23f654309dd02006be671859df0a134c",
+      "license": "MIT",
+      "tasks": ["Vue component and browser tests"]
+    },
+    {
+      "name": "symfony-voters",
+      "path": ".claude/skills/symfony-voters/SKILL.md",
+      "source": "https://github.com/dev-toolings/superpowers-symfony",
+      "revision": "ab84bcb7561060acd5b210d9ad5632289edcc0cc",
+      "license": "MIT",
+      "tasks": ["Symfony authorization"]
+    },
+    {
+      "name": "supabase-postgres-best-practices",
+      "path": ".claude/skills/supabase-postgres-best-practices/SKILL.md",
+      "source": "https://github.com/supabase/agent-skills",
+      "revision": "551274ed2fe97c8fea1325f7ceb05803a542f8df",
+      "license": "MIT",
+      "tasks": ["PostgreSQL queries, schema and locking"]
+    },
+    {
+      "name": "takewise-backend",
+      "path": ".claude/skills/takewise-backend/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Proprietary",
+      "tasks": [
+        "Symfony endpoints, DTOs, application services and backend tests"
+      ]
+    },
+    {
+      "name": "takewise-frontend",
+      "path": ".claude/skills/takewise-frontend/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Proprietary",
+      "tasks": ["Vue screens, forms, server state and accessibility"]
+    },
+    {
+      "name": "takewise-security",
+      "path": ".claude/skills/takewise-security/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Proprietary",
+      "tasks": [
+        "Authentication, tenant authorization, invitation/reset, role or session changes"
+      ]
+    },
+    {
+      "name": "takewise-data",
+      "path": ".claude/skills/takewise-data/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Proprietary",
+      "tasks": [
+        "Schema, PostgreSQL queries, invoice lifecycle and inventory transactions"
+      ]
+    },
+    {
+      "name": "takewise-delivery",
+      "path": ".claude/skills/takewise-delivery/SKILL.md",
+      "source": "project-authored",
+      "revision": "project-authored",
+      "license": "Proprietary",
+      "tasks": ["CI, dependency updates, email queues, release and recovery"]
+    }
+  ],
+  "blockers": [],
+  "exceptions": [],
+  "substantive_review": {
+    "status": "pass",
+    "mode": "independent",
+    "reviewer": "foundation_review fresh subagent (did not author files)",
+    "evidence": "docs/engineering/review.md"
+  }
+}

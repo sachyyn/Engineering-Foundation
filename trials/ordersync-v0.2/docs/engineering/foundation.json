@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "status": "ready",
+  "artifacts": {
+    "entry": "AGENTS.md",
+    "research": "docs/engineering/research.md",
+    "skill_evaluation": "docs/engineering/skills.md",
+    "rules": "docs/engineering/rules.md",
+    "patterns": "docs/engineering/patterns.md",
+    "enforcement": "docs/engineering/enforcement.md",
+    "verification": "docs/engineering/verification.md"
+  },
+  "areas": {
+    "product-risk": {
+      "status": "resolved",
+      "detail": "Internal financial batch job; duplicates unacceptable; MONEY/RUN/SEC rules."
+    },
+    "runtime-deployment": {
+      "status": "resolved",
+      "detail": "Ubuntu 24.04 OS Python 3.12, synchronous CLI, cron; operational activation runbook."
+    },
+    "responsibilities": {
+      "status": "resolved",
+      "detail": "ARCH-01/02 explicit module ownership and dependency direction."
+    },
+    "repository-structure": {
+      "status": "resolved",
+      "detail": "Preserve src/ordersync and tests; patterns name future modules only when features need them."
+    },
+    "language-conventions": {
+      "status": "resolved",
+      "detail": "Decimal text construction, typing and lint checks, explicit error and formatting review."
+    },
+    "api-contracts": {
+      "status": "resolved",
+      "detail": "CONTRACT-01, HTTP-01 and S3-01 define payload compatibility, conditional writes and retry semantics. finance_key equals run_id; path parser remains a compatibility wrapper over the future bytes interface."
+    },
+    "data-persistence": {
+      "status": "resolved",
+      "detail": "RUN journal protocol, immutable CSV hash, versioned JSON run/status records, RET-01."
+    },
+    "identity-security": {
+      "status": "resolved",
+      "detail": "SEC-01 separates finance/ops archive access from ops-only status; safe configuration/logging."
+    },
+    "frontend-interaction": {
+      "status": "not-applicable",
+      "detail": "No UI; requested status is a private JSON object, not a public service."
+    },
+    "background-concurrency": {
+      "status": "resolved",
+      "detail": "RUN-01..04 single-host lock, durable outcomes, seven-day receiver replay constraint."
+    },
+    "local-development": {
+      "status": "resolved",
+      "detail": "OS Python/uv, locked environment, one command; no service or Docker required."
+    },
+    "verification-strategy": {
+      "status": "resolved",
+      "detail": "TEST-01 synthetic boundary/failure recipes; actual parser test and foundation negative trials."
+    },
+    "performance-reliability": {
+      "status": "resolved",
+      "detail": "Explicit initial input/run/adapter bounds and operational measurement revisit conditions."
+    },
+    "ci-review": {
+      "status": "resolved",
+      "detail": "Check-only Actions on PR/master/merge_group with ordersync-quality; external activation handoff."
+    },
+    "build-supply-chain": {
+      "status": "resolved",
+      "detail": "Locked build group, wheel check, action hashes; dependency license/advisory release review."
+    },
+    "release-distribution": {
+      "status": "resolved",
+      "detail": "Manual reviewed wheel promotion with hashes and locked runtime artifacts; no publishing."
+    },
+    "cd-infrastructure": {
+      "status": "resolved",
+      "detail": "Keep cron/manual delivery; runbook requires actual ops paths and identities before activation."
+    },
+    "operations-recovery": {
+      "status": "resolved",
+      "detail": "Ops on-call; lock, journal, reconciliation, retention verification and code-only rollback."
+    },
+    "agent-guidance": {
+      "status": "resolved",
+      "detail": "AGENTS routing, CLAUDE import, three persistent .claude skills; direct-file Codex fallback."
+    },
+    "maintenance-handoff": {
+      "status": "resolved",
+      "detail": "Explicit reassessment triggers and maintainer/ops ownership; no scheduled caretaker."
+    }
+  },
+  "skills": [
+    {
+      "name": "ordersync-data",
+      "path": ".claude/skills/ordersync-data/SKILL.md",
+      "source": "project-authored",
+      "revision": "2",
+      "license": "Internal project guidance; no public license grant declared",
+      "tasks": [
+        "CSV validation",
+        "Decimal integrity",
+        "Python data contracts and tests"
+      ]
+    },
+    {
+      "name": "ordersync-delivery",
+      "path": ".claude/skills/ordersync-delivery/SKILL.md",
+      "source": "project-authored",
+      "revision": "2",
+      "license": "Internal project guidance; no public license grant declared",
+      "tasks": [
+        "HTTP retries",
+        "S3 and status",
+        "Security and recovery tests"
+      ]
+    },
+    {
+      "name": "ordersync-maintenance",
+      "path": ".claude/skills/ordersync-maintenance/SKILL.md",
+      "source": "project-authored",
+      "revision": "1",
+      "license": "Internal project guidance; no public license grant declared",
+      "tasks": [
+        "Dependencies and checks",
+        "CI and release",
+        "Guidance and ops review"
+      ]
+    }
+  ],
+  "blockers": [],
+  "exceptions": [],
+  "substantive_review": {
+    "status": "pass",
+    "mode": "self",
+    "reviewer": "Codex foundation author, separate acceptance review",
+    "evidence": "docs/engineering/verification.md"
+  },
+  "independent_review": {
+    "source": "Independent read-only findings relayed by simulated tech lead on 2026-09-25; reviewer identity not supplied",
+    "findings": [
+      "RUN-01 finance key/run ID relationship unspecified",
+      "Snapshot recipe omitted public parser interface migration"
+    ],
+    "disposition": "Both addressed in guidance; author closure review, independent post-fix review not verified",
+    "evidence": "docs/engineering/verification.md"
+  },
+  "skill_proposals": [
+    {
+      "name": "python-testing-patterns",
+      "source": "wshobson/agents",
+      "revision": "be57c0b2e3c05c528ca6132b87410b385718775f",
+      "status": "proposed; not installed; installation requires approval",
+      "evidence": "docs/engineering/skills.md"
+    }
+  ]
+}
