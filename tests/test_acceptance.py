@@ -7,9 +7,11 @@ import sys
 import tempfile
 import unittest
 
-from scripts.check_foundation import AREAS, ROLES, validate
+SKILL_DIR = Path(__file__).resolve().parents[1] / "skills/engineering-foundation"
+SCRIPT = SKILL_DIR / "scripts/check_foundation.py"
+sys.path.insert(0, str(SKILL_DIR))
 
-SCRIPT = Path(__file__).resolve().parents[1] / "scripts/check_foundation.py"
+from scripts.check_foundation import AREAS, ROLES, validate  # noqa: E402
 
 
 class StructuralAcceptance(unittest.TestCase):

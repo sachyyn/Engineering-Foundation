@@ -99,7 +99,12 @@ A fresh session in each generated repository got an ordinary request that also c
 
 - Frontmatter: the skill's own description had an unquoted `: `, which is invalid YAML for strict loaders. Fixed; the checker now flags the same mistake in generated skills.
 
-## Installing this skill natively
+## Installing this skill
+
+- `npx skills add <this repo> --list` finds exactly one skill, `engineering-foundation` (the example skills under `trials/` are not picked up).
+- `npx skills add ... -a claude-code -a codex -a cursor --copy -y` into a scratch project installed `SKILL.md`, `references/` and `scripts/` for each agent. Claude Code then loaded it with `/engineering-foundation`, and Codex listed it from `.agents/skills`. Tested from the local checkout; the same repository is what `npx skills add sachyyn/Engineering-Foundation` downloads.
+
+## Installing this skill natively (earlier manual copy)
 
 - Claude Code: copied to `.claude/skills/engineering-foundation/`; `/engineering-foundation` loaded the skill body.
 - Codex: copied to `.agents/skills/engineering-foundation/`; a fresh session listed it with that path.

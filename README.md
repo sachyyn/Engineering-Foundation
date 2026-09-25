@@ -4,17 +4,36 @@ A manually invoked workflow that researches and sets up how developers and codin
 
 Version: **0.3.0**. 0.2 replaced the permissive 0.1 workflow; 0.3 makes the tech lead decide every consequential choice instead of the agent. See [verification results](tests/RESULTS.md) for exact evidence and remaining limits.
 
+## Install
+
+One command, for Claude Code, Codex, Cursor and [60+ other agents](https://github.com/vercel-labs/skills#supported-agents):
+
+```sh
+npx skills add sachyyn/Engineering-Foundation -g
+```
+
+`-g` installs it for you across all projects, which is what a tech lead wants: it is a setup tool, not something every project repository should carry. The CLI asks which agents to install for. The full GitHub URL works too: `npx skills add https://github.com/sachyyn/Engineering-Foundation -g`.
+
+To update later: `npx skills update engineering-foundation -g`. To remove: `npx skills remove engineering-foundation -g`.
+
 ## Use it
 
-Give the coding agent this directory and explicitly invoke the workflow:
+Open your agent in the project folder (an empty folder for a new project) and invoke it with your brief:
 
-> Read `/path/to/engineering-foundation/SKILL.md` and use it for this project. Investigate and propose the foundation first. After we agree and I ask you to implement, set up the approved repository artifacts. Do not implement product features or change remote systems.
+| Tool | How to start it | Checked |
+| --- | --- | --- |
+| Claude Code | `/engineering-foundation` followed by your brief | Installed with `npx skills add`, loaded by slash command, 2026-09-25 |
+| Codex | "Use the engineering-foundation skill for this project" followed by your brief | Installed with `npx skills add`, listed in the session's skills, 2026-09-25 |
+| Cursor and others | Same as Codex: name the skill in your first message | Not checked |
+| No skill support | "Read `<path>/skills/engineering-foundation/SKILL.md` and follow it for this project" | Works with any agent that can read files |
 
-In the same message, describe what you are building, which technologies are fixed, where it runs, and which coding tools the team uses. The more you say up front, the fewer questions it asks.
+In the brief, say what you are building, which technologies are fixed, where it runs, and which coding tools the team uses. For example:
+
+> /engineering-foundation New project called takewise. Web ERP used by our clients. Vue.js frontend and PHP Symfony backend are fixed. I am the tech lead. Discuss everything with me before building anything.
 
 What to expect. It takes several rounds of conversation; that is by design.
 
-1. It reads the repository. No files change until step 5.
+1. It reads the folder you started it in. No files change until step 5.
 2. **Requirements.** It asks what you're building: users and roles, sign-in, first modules, data, integrations, hosting, team tools. It writes back a short summary for you to confirm.
 3. It researches the stack and looks for existing skills.
 4. **Decisions.** It walks through the decisions a few at a time, starting with the company defaults (Git, GitHub, Docker, skill sources). Each comes with a recommendation and alternatives; you answer. Say "use your recommendations for the rest" whenever you want to speed up; it will still list them.
@@ -23,17 +42,9 @@ What to expect. It takes several rounds of conversation; that is by design.
 
 Partial is a normal, honest result when a tool it needs (for example PHP or Docker) is missing on your machine. It lists exactly what is left.
 
-To install it as a native skill, copy `SKILL.md`, `references/`, and `scripts/` together into a folder named `engineering-foundation`:
-
-| Tool | Location | How to invoke | Checked |
-| --- | --- | --- | --- |
-| Claude Code | `~/.claude/skills/engineering-foundation/` (you) or `.claude/skills/engineering-foundation/` (one repo) | `/engineering-foundation` followed by your brief | Loaded by slash command, 2026-09-25 |
-| Codex | `~/.agents/skills/engineering-foundation/` or `.agents/skills/engineering-foundation/` | Name it in the prompt, or use the direct-file prompt above | Listed in the session's skills from `.agents/skills`, 2026-09-25 |
-| Anything else with file access | Anywhere | The direct-file prompt above | Not checked per tool |
-
 Codex ignores `disable-model-invocation`, so it could pick the skill up on its own; the skill's first section tells it to stop unless setup was explicitly requested.
 
-`disable-model-invocation: true` requests manual invocation where supported. The skill body also requires it. No background caretaker, automatic policy refresh, global installation, or Git hosting setup is included.
+`disable-model-invocation: true` requests manual invocation where supported. The skill body also requires it. When it runs, it changes nothing outside the project folder: no background caretaker, automatic policy refresh, global configuration, or Git hosting setup.
 
 ## What a full setup must deliver
 
@@ -47,7 +58,7 @@ Codex ignores `disable-model-invocation`, so it could pick the skill up on its o
 
 These are required roles, not seven mandatory separate documents. Existing authoritative files may fulfill them. A small entry file is useful; a small entry file without the detailed guidance behind it is not enough.
 
-The artifact index is `docs/engineering/foundation.json`. It records the actual local paths, installed skills, decision coverage, blockers, exceptions, and review evidence. The [output contract](references/output.md) defines it.
+The artifact index is `docs/engineering/foundation.json`. It records the actual local paths, installed skills, decision coverage, blockers, exceptions, and review evidence. The [output contract](skills/engineering-foundation/references/output.md) defines it.
 
 ## What changed after the failed trial
 
@@ -93,7 +104,7 @@ Repository files cannot force arbitrary agents to read them or activate GitHub m
 Requires Python 3.9+; Git is used for ignore checks when available. No Python packages are required.
 
 ```sh
-python3 scripts/check_foundation.py /path/to/target-repository
+python3 skills/engineering-foundation/scripts/check_foundation.py /path/to/target-repository
 ```
 
 Exit codes:
@@ -102,7 +113,7 @@ Exit codes:
 - `1`: structural failure or inconsistent ready claim.
 - `2`: required structure exists, but the recorded outcome is partial/blocked.
 
-**This is not a quality certificate.** It cannot prove sources were read, rules are sound, review claims are truthful, or an agent obeyed the guidance. Apply [the acceptance rubric](references/acceptance.md) and inspect the actual evidence. In particular, passing this command alone does not prove setup is complete.
+**This is not a quality certificate.** It cannot prove sources were read, rules are sound, review claims are truthful, or an agent obeyed the guidance. Apply [the acceptance rubric](skills/engineering-foundation/references/acceptance.md) and inspect the actual evidence. In particular, passing this command alone does not prove setup is complete.
 
 Do not add Python to a non-Python product merely for this tool. Run it from the setup environment, perform the disclosed manual equivalent if unavailable, or integrate a suitable agreed native check.
 
@@ -118,14 +129,14 @@ Structural tests cover the reported omissions, broken persistence/routing, machi
 
 ## Reference map
 
-- [Discovery](references/discovery.md): efficient questions, new/existing project paths, and approval.
-- [Decision coverage](references/decisions.md): defaults and 20 development-through-delivery areas.
-- [Research](references/research.md): architecture investigation and persistent skill selection.
-- [Output contract](references/output.md): required artifacts, rules, patterns, routing, and index schema.
-- [Enforcement](references/enforcement.md): useful checks, CI, bypasses, and delivery safety.
-- [Acceptance](references/acceptance.md): substantive review and ready/partial/blocked outcomes.
-- [Verification](references/verification.md): exact-target tests and evidence reporting.
-- [Sources](references/sources.md): primary documentation behind format and enforcement limits.
+- [Discovery](skills/engineering-foundation/references/discovery.md): efficient questions, new/existing project paths, and approval.
+- [Decision coverage](skills/engineering-foundation/references/decisions.md): defaults and 20 development-through-delivery areas.
+- [Research](skills/engineering-foundation/references/research.md): architecture investigation and persistent skill selection.
+- [Output contract](skills/engineering-foundation/references/output.md): required artifacts, rules, patterns, routing, and index schema.
+- [Enforcement](skills/engineering-foundation/references/enforcement.md): useful checks, CI, bypasses, and delivery safety.
+- [Acceptance](skills/engineering-foundation/references/acceptance.md): substantive review and ready/partial/blocked outcomes.
+- [Verification](skills/engineering-foundation/references/verification.md): exact-target tests and evidence reporting.
+- [Sources](skills/engineering-foundation/references/sources.md): primary documentation behind format and enforcement limits.
 
 ## Distribution
 
